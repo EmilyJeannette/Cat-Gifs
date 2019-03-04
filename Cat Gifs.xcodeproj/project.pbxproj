@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4DC4A22E222D97340074A6DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4A22D222D97340074A6DE /* AppDelegate.swift */; };
-		4DC4A230222D97340074A6DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4A22F222D97340074A6DE /* ViewController.swift */; };
+		4DC4A230222D97340074A6DE /* GifsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4A22F222D97340074A6DE /* GifsViewController.swift */; };
 		4DC4A233222D97340074A6DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC4A231222D97340074A6DE /* Main.storyboard */; };
 		4DC4A235222D973A0074A6DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC4A234222D973A0074A6DE /* Assets.xcassets */; };
 		4DC4A238222D973A0074A6DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC4A236222D973A0074A6DE /* LaunchScreen.storyboard */; };
+		4DC4A240222D99410074A6DE /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4A23F222D99410074A6DE /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4DC4A22A222D97340074A6DE /* Cat Gifs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cat Gifs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC4A22D222D97340074A6DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DC4A22F222D97340074A6DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DC4A22F222D97340074A6DE /* GifsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifsViewController.swift; sourceTree = "<group>"; };
 		4DC4A232222D97340074A6DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DC4A234222D973A0074A6DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DC4A237222D973A0074A6DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DC4A239222D973A0074A6DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DC4A23F222D99410074A6DE /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				4DC4A22D222D97340074A6DE /* AppDelegate.swift */,
-				4DC4A22F222D97340074A6DE /* ViewController.swift */,
+				4DC4A22F222D97340074A6DE /* GifsViewController.swift */,
 				4DC4A231222D97340074A6DE /* Main.storyboard */,
 				4DC4A234222D973A0074A6DE /* Assets.xcassets */,
 				4DC4A236222D973A0074A6DE /* LaunchScreen.storyboard */,
 				4DC4A239222D973A0074A6DE /* Info.plist */,
+				4DC4A23F222D99410074A6DE /* SwiftyJSON.swift */,
 			);
 			path = "Cat Gifs";
 			sourceTree = "<group>";
@@ -135,7 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DC4A230222D97340074A6DE /* ViewController.swift in Sources */,
+				4DC4A240222D99410074A6DE /* SwiftyJSON.swift in Sources */,
+				4DC4A230222D97340074A6DE /* GifsViewController.swift in Sources */,
 				4DC4A22E222D97340074A6DE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
