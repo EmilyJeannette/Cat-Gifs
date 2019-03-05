@@ -46,6 +46,15 @@ class GifsViewController: UITableViewController {
                                       preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil) }
- 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell =  tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let gif = data[indexPath.row]
+        cell.textLabel?.text = gif["title"]
+        cell.detailTextLabel?.text = gif["type"]
+        return cell
+    }
 }
 
