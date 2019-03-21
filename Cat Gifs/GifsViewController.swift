@@ -15,18 +15,20 @@ class GifsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         self.title = "Cat Gifs"
-        let query = "This call to http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=\(apiKey)"
-        if let url = URL(string: query) {
-            if let data = try? Data(contentsOf: url) {
-                let json = try! JSON(data: data)
-                if json["status"] == "ok" {
-                    parse(json: json)
+        let query = "https://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=\(apiKey)"
+        DispatchQueue.global(qos: .userInitiated).async {
+            [unowned self] in
+            if let url = URL(string: query) {
+                if let data = try? Data(contentsOf: url) {
+                    let json = try! JSON(data: data)
+                    self.parse(json: json)
                     return
                 }
             }
+            self.loadError()
         }
-        loadError()
     }
     
     func parse(json: JSON) {
@@ -37,18 +39,28 @@ class GifsViewController: UITableViewController {
             let gif = ["id": id, "title": title, "type": type]
             data.append(gif)
         }
-        tableView.reloadData()
+        
+        DispatchQueue.main.async {
+            [unowned self] in
+            self.tableView.reloadData()
+        }
     }
     
     func loadError() {
-        let alert = UIAlertController(title: "Loading Error",
-                                      message: "There was a problem loading the gif",
-                                      preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil) }
+        DispatchQueue.main.async {
+            [unowned self] in
+            let alert = UIAlertController(title: "Loading Error",
+                                          message: "There was a problem loading the gif",
+                                          preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let gif = data[indexPath.row]
@@ -56,5 +68,5 @@ class GifsViewController: UITableViewController {
         cell.detailTextLabel?.text = gif["type"]
         return cell
     }
+    
 }
-
